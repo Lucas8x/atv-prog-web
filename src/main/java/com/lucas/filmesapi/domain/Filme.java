@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -21,7 +21,7 @@ public class Filme {
     @Temporal(TemporalType.DATE)
     private Date dataLancamento;
     private String sinopse;
-    @ManyToOne
+    @OneToOne
     private Genero genero;
 
     public Filme() {}

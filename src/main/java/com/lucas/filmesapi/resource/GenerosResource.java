@@ -32,9 +32,8 @@ public class GenerosResource {
   @GetMapping(value="/{id}")
   public ResponseEntity<Genero> buscarPorID(@PathVariable("id") Long generoID) {
     return generosRepository.findById(generoID)
-      .map(genero ->
-        ResponseEntity.ok(genero))
-        .orElse(ResponseEntity.notFound().build());
+      .map(genero -> ResponseEntity.ok(genero))
+      .orElse(ResponseEntity.notFound().build());
   }
 
   @PostMapping

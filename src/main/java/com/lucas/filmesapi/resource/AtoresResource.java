@@ -32,9 +32,8 @@ public class AtoresResource {
   @GetMapping(value = "/{id}")
   public ResponseEntity<Ator> buscarPorID(@PathVariable("id") Long AtorID) {
     return atoresRepository.findById(AtorID)
-      .map(ator ->
-        ResponseEntity.ok(ator))
-        .orElse(ResponseEntity.notFound().build());
+      .map(ator -> ResponseEntity.ok(ator))
+      .orElse(ResponseEntity.notFound().build());
   }
 
   @PostMapping

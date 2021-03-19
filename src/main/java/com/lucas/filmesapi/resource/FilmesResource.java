@@ -32,9 +32,8 @@ public class FilmesResource {
   @GetMapping(value = "/{id}")
   public ResponseEntity<Filme> buscarPorID(@PathVariable("id") Long FilmeID) {
     return filmesRepository.findById(FilmeID)
-      .map(ator ->
-        ResponseEntity.ok(ator))
-        .orElse(ResponseEntity.notFound().build());
+      .map(ator -> ResponseEntity.ok(ator))
+      .orElse(ResponseEntity.notFound().build());
   }
 
   @PostMapping
